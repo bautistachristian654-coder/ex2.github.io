@@ -1,0 +1,3080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FAF8F5">
+    <title>BeYOUtiful Life Events - Wedding Planning Hub</title>
+    
+    <!-- Google Fonts for romantic typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons for UI graphics -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --blush-pink: #F8E8EE;
+            --rose-gold: #D4AF37;
+            --rose-gold-dark: #b8952b;
+            --soft-lavender: #E8E5F1;
+            --mint-green: #E1F0DA;
+            --warm-cream: #FAF8F5;
+            --deep-plum: #4A354F;
+            --text-dark: #332C35;
+            --text-muted: #736775;
+            --white: #FFFFFF;
+            --shadow-sm: 0 4px 15px rgba(74, 53, 79, 0.05);
+            --shadow-md: 0 8px 25px rgba(74, 53, 79, 0.08);
+            --shadow-lg: 0 12px 35px rgba(74, 53, 79, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: var(--warm-cream);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-width: 320px;
+        }
+
+        button, a {
+            touch-action: manipulation;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--deep-plum);
+            font-weight: 700;
+        }
+
+        .script-font {
+            font-family: 'Great Vibes', cursive;
+            color: var(--rose-gold);
+        }
+
+        /* Layout Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Top Header Navigation Bar */
+        header {
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .nav-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .brand-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-logo h1 {
+            font-size: 1.8rem;
+            letter-spacing: 0.5px;
+        }
+
+        .quick-stats {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .quick-stat-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--blush-pink);
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hero Header Section */
+        .hero {
+            text-align: center;
+            padding: 50px 20px 30px;
+            background: linear-gradient(180deg, var(--blush-pink) 0%, var(--warm-cream) 100%);
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--blush-pink), var(--rose-gold), var(--soft-lavender));
+        }
+
+        .hero-subtitle {
+            font-size: 2.2rem;
+            margin-bottom: -10px;
+            display: block;
+        }
+
+        .hero-byline {
+            margin-bottom: 1rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 0;
+            letter-spacing: 1px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-weight: 300;
+        }
+
+        /* Round Center Profile/Logo Image */
+        .hero-avatar-container {
+            position: relative;
+            width: 170px;
+            height: 170px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            padding: 8px;
+            background: linear-gradient(135deg, var(--rose-gold), var(--blush-pink), var(--rose-gold));
+            box-shadow: var(--shadow-lg);
+            animation: pulseGlow 4s infinite alternate;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
+            100% { box-shadow: 0 0 28px rgba(212, 175, 55, 0.45); }
+        }
+
+        .hero-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid var(--white);
+        }
+
+        /* About Us Section */
+        .about-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 40px;
+            margin: 30px auto;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .about-card::after {
+            content: "“";
+            position: absolute;
+            right: 20px;
+            bottom: -30px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 12rem;
+            color: var(--blush-pink);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .about-card h2 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .about-card .about-bio {
+            overflow: hidden;
+            transition: max-height 0.45s ease;
+        }
+
+        .about-bio-toggle {
+            position: relative;
+            z-index: 1;
+            margin-top: 12px;
+            padding: 4px;
+            border: 0;
+            background: transparent;
+            color: var(--rose-gold-dark);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+
+        .about-bio-toggle:focus-visible {
+            outline: 2px solid var(--rose-gold);
+            outline-offset: 3px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .about-card .about-bio {
+                transition: none;
+            }
+        }
+
+        /* Interactive Photo Slideshow */
+        .slideshow-section {
+            margin: 40px auto;
+        }
+
+        .slideshow-container {
+            position: relative;
+            max-width: 1000px;
+            height: 480px;
+            margin: 0 auto;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+            border: 4px solid var(--white);
+            touch-action: pan-y;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+            transform: scale(1.03);
+        }
+
+        .slide.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 30px 20px 20px;
+            background: linear-gradient(transparent, rgba(51, 44, 53, 0.85));
+            color: var(--white);
+            text-align: center;
+        }
+
+        .slide-caption h3 {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .slide-caption p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .prev-btn, .next-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.85);
+            color: var(--deep-plum);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+            z-index: 10;
+        }
+
+        .prev-btn:hover, .next-btn:hover {
+            background: var(--white);
+            color: var(--rose-gold-dark);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+
+        .slideshow-dots {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 280px;
+            gap: 0;
+            margin-top: 15px;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .dot {
+            display: inline-flex;
+            width: 44px;
+            height: 44px;
+            flex: 0 0 44px;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            border: 0;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot::before {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #dcd0dd;
+            content: "";
+            transition: var(--transition);
+        }
+
+        .dot.active::before, .dot:hover::before {
+            background: var(--rose-gold);
+            transform: scale(1.2);
+        }
+
+        .dot:focus-visible,
+        .prev-btn:focus-visible,
+        .next-btn:focus-visible,
+        .dash-btn:focus-visible {
+            outline: 3px solid var(--rose-gold-dark);
+            outline-offset: 3px;
+        }
+
+        /* Navigation Dashboard Tabs */
+        .dashboard-nav-section {
+            margin: 50px auto 30px;
+            text-align: center;
+        }
+
+        .dashboard-nav-title {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .dashboard-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .dash-btn {
+            background: var(--white);
+            border: 2px solid rgba(212, 175, 55, 0.4);
+            padding: 16px 32px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--deep-plum);
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dash-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(135deg, var(--blush-pink), var(--soft-lavender));
+            opacity: 0;
+            transition: var(--transition);
+            z-index: 0;
+        }
+
+        .dash-btn span, .dash-btn i {
+            position: relative;
+            z-index: 1;
+        }
+
+        .dash-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--rose-gold);
+        }
+
+        .dash-btn:hover::before {
+            opacity: 1;
+        }
+
+        .dash-btn.active {
+            background: var(--deep-plum);
+            color: var(--white);
+            border-color: var(--rose-gold);
+            box-shadow: var(--shadow-md);
+        }
+
+        .dash-btn.active i {
+            color: var(--rose-gold);
+        }
+
+        .dash-btn.active::before {
+            opacity: 0;
+        }
+
+        /* Sub-dashboards Area */
+        .sub-dashboard {
+            display: none;
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 35px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            margin-bottom: 60px;
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        .sub-dashboard.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .dash-header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--warm-cream);
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .dash-header-row h3 {
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Stats & Metric Cards */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .metric-card {
+            padding: 20px;
+            border-radius: var(--radius-md);
+            background: var(--warm-cream);
+            border-left: 4px solid var(--rose-gold);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .metric-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .metric-card h4 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--deep-plum);
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .metric-subtext {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        /* Form Controls and Layouts */
+        .form-section {
+            background: var(--warm-cream);
+            padding: 25px;
+            border-radius: var(--radius-md);
+            margin-bottom: 30px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .form-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--deep-plum);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .form-group label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-control {
+            padding: 10px 14px;
+            border: 1px solid #dcd0dd;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            transition: var(--transition);
+            background: var(--white);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--rose-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-primary {
+            background: var(--deep-plum);
+            color: var(--white);
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: #39283d;
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-1px);
+        }
+
+        .btn-accent {
+            background: var(--rose-gold);
+            color: var(--white);
+            border: none;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .btn-accent:hover {
+            background: var(--rose-gold-dark);
+        }
+
+        /* Filter Controls Bar */
+        .filter-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .search-box i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .search-box input {
+            padding-left: 36px;
+            width: 100%;
+        }
+
+        /* Data Tables */
+        .table-responsive {
+            overflow-x: auto;
+            border-radius: var(--radius-sm);
+            border: 1px solid #eae2eb;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+        .data-table th {
+            background: var(--blush-pink);
+            color: var(--deep-plum);
+            font-weight: 600;
+            padding: 14px 16px;
+            border-bottom: 2px solid #e2d3e4;
+        }
+
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid #f0e8f1;
+            vertical-align: middle;
+        }
+
+        .data-table tbody tr:hover {
+            background: rgba(248, 232, 238, 0.3);
+        }
+
+        /* Status Badges */
+        .badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        .badge-pending { background: #fff3cd; color: #856404; }
+        .badge-completed { background: #d4edda; color: #155724; }
+        .badge-confirmed { background: var(--mint-green); color: #2d5a27; }
+        .badge-declined { background: #f8d7da; color: #721c24; }
+
+        /* Action Buttons */
+        .action-btns {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: none;
+            background: var(--warm-cream);
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-icon:hover {
+            background: var(--deep-plum);
+            color: var(--white);
+        }
+
+        .btn-icon.delete:hover {
+            background: #dc3545;
+            color: var(--white);
+        }
+
+        /* Progress Bar */
+        .progress-bar-container {
+            width: 100%;
+            height: 12px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--rose-gold), #e8a87c);
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+
+        /* Footer Section */
+        footer {
+            background: var(--deep-plum);
+            color: var(--warm-cream);
+            padding: 60px 0 20px;
+            margin-top: 80px;
+            border-top: 4px solid var(--rose-gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--rose-gold);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            color: rgba(250, 248, 245, 0.8);
+            margin-bottom: 12px;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-col i {
+            color: var(--rose-gold);
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-icon .fa-facebook-f {
+            font-size: 3em;
+        }
+
+        .social-icon .fa-location-dot {
+            font-size: 3em;
+        }
+
+        .social-icon:hover {
+            background: var(--rose-gold);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(250, 248, 245, 0.6);
+        }
+
+        /* Modal Popup for Edits */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            width: 100%;
+            max-width: 550px;
+            padding: 30px;
+            box-shadow: var(--shadow-lg);
+            position: relative;
+            animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--warm-cream);
+        }
+
+        .close-modal {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        #essential-dashboard {
+            width: min(94vw, 900px);
+            max-width: none;
+            max-height: 90vh;
+            margin: auto;
+            padding: 28px 20px 56px;
+            overflow: auto;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            border-radius: var(--radius-lg);
+            background:
+                radial-gradient(ellipse at top left, rgba(248, 232, 238, 0.8), transparent 38rem),
+                var(--warm-cream);
+            color: var(--deep-plum);
+            font-family: "Segoe UI", Arial, sans-serif;
+            box-shadow: var(--shadow-lg);
+        }
+
+        #essential-dashboard::backdrop {
+            background: rgba(38, 28, 40, 0.48);
+            backdrop-filter: blur(3px);
+        }
+
+        .essential-page {
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .essential-back-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            min-height: 44px;
+            padding: 8px 4px;
+            border: 0;
+            background: transparent;
+            color: var(--deep-plum);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .essential-back-button:hover {
+            color: var(--rose-gold-dark);
+        }
+
+        .essential-back-button:focus-visible,
+        .essential-service-button:focus-visible,
+        .essential-dialog-close:focus-visible {
+            outline: 3px solid var(--rose-gold);
+            outline-offset: 4px;
+        }
+
+        .essential-header {
+            position: static;
+            padding: 46px 0 30px;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+            text-align: center;
+        }
+
+        .essential-eyebrow,
+        .essential-dialog-eyebrow {
+            margin: 0 0 8px;
+            color: var(--rose-gold-dark);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+        }
+
+        #essential-dashboard h1,
+        #essential-dashboard h2,
+        .essential-package-price {
+            font-family: Georgia, "Times New Roman", serif;
+        }
+
+        #essential-dashboard h1 {
+            margin: 0;
+            color: var(--deep-plum);
+            font-size: clamp(3.5rem, 11vw, 6.5rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            line-height: 1;
+        }
+
+        .essential-title-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 18px auto 0;
+            color: var(--rose-gold);
+        }
+
+        .essential-title-ornament::before,
+        .essential-title-ornament::after {
+            width: 52px;
+            height: 1px;
+            background: var(--rose-gold);
+            content: "";
+        }
+
+        #essential-dashboard h2 {
+            margin: 0;
+            color: var(--deep-plum);
+            font-size: clamp(1.7rem, 5vw, 2.5rem);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .essential-package-card {
+            position: relative;
+            display: grid;
+            width: min(100%, 350px);
+            aspect-ratio: 1;
+            place-content: center;
+            gap: 15px;
+            margin: 26px auto 54px;
+            padding: 36px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.7);
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
+                repeating-linear-gradient(45deg, #f5e9e4 0 1px, transparent 1px 12px);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .essential-package-card::before,
+        .essential-package-card::after {
+            position: absolute;
+            width: 68px;
+            height: 68px;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+            content: "";
+        }
+
+        .essential-package-card::before {
+            top: -36px;
+            left: -36px;
+        }
+
+        .essential-package-card::after {
+            right: -36px;
+            bottom: -36px;
+        }
+
+        .essential-package-kicker {
+            margin: 0;
+            color: var(--rose-gold-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        .essential-package-price {
+            margin: 0;
+            color: var(--deep-plum);
+            font-size: clamp(2.1rem, 8vw, 3rem);
+            font-weight: 500;
+            line-height: 1.1;
+        }
+
+        .essential-package-note {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .essential-services-heading {
+            margin-bottom: 22px !important;
+        }
+
+        .essential-service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .essential-service-button {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-height: 62px;
+            padding: 16px 20px;
+            border: 1px solid rgba(74, 53, 79, 0.12);
+            border-radius: 12px;
+            background: var(--white);
+            box-shadow: var(--shadow-sm);
+            color: var(--deep-plum);
+            cursor: pointer;
+            font: inherit;
+            font-size: 1rem;
+            font-weight: 600;
+            text-align: left;
+            transition: var(--transition);
+        }
+
+        .essential-service-button > i {
+            width: 1.25rem;
+            color: var(--rose-gold-dark);
+            text-align: center;
+        }
+
+        .essential-service-button::after {
+            margin-left: auto;
+            color: var(--rose-gold-dark);
+            content: "›";
+            font-size: 1.25rem;
+            line-height: 1;
+        }
+
+        .essential-service-button:hover {
+            transform: translateY(-2px);
+            border-color: var(--rose-gold);
+            background: #fffaf7;
+            box-shadow: var(--shadow-md);
+        }
+
+        .essential-package-details {
+            position: relative;
+            width: min(100%, 360px);
+            margin-top: 38px;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.55);
+            border-radius: var(--radius-md);
+            background: linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(250, 248, 245, 0.92));
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .essential-package-benefits {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            margin: 0 auto;
+            color: var(--deep-plum);
+            max-width: 760px;
+        }
+
+        .essential-benefit {
+            display: flex;
+            min-height: 48px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            color: var(--deep-plum);
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .essential-benefit:not(:first-child)::before {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 44px;
+            border-left: 1px dashed rgba(115, 103, 117, 0.38);
+            content: "";
+            transform: translateY(-50%);
+        }
+
+        .essential-benefit {
+            position: relative;
+        }
+
+        .essential-benefit i {
+            color: var(--rose-gold-dark);
+            font-size: 1.15rem;
+            transition: var(--transition);
+        }
+
+        .essential-benefit:hover i {
+            transform: translateY(-2px);
+        }
+
+        .essential-package-promise {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 10px 9px;
+            border-radius: 999px;
+            background: #66594f;
+            color: var(--white);
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .essential-package-promise > i {
+            flex: 0 0 auto;
+            color: #fff8ed;
+            font-size: 0.85rem;
+        }
+
+        .essential-script-accent {
+            color: #fff1d6;
+            font-family: 'Great Vibes', cursive;
+            font-size: 1.5em;
+        }
+
+        .essential-package-highlights {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+            align-items: stretch;
+            gap: 8px;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .essential-highlight {
+            display: flex;
+            min-height: 112px;
+            flex-direction: column;
+            justify-content: center;
+            gap: 4px;
+            padding: 12px 8px;
+            border-radius: 12px;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            background: rgba(250, 248, 245, 0.88);
+        }
+
+        .essential-highlight-icon {
+            margin-bottom: 4px;
+            color: var(--rose-gold-dark);
+            font-size: 1.1rem;
+        }
+
+        .essential-highlight-label {
+            margin: 0;
+            color: var(--rose-gold-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .essential-customizable {
+            max-width: 100%;
+            font-size: clamp(0.625rem, 3.2vw, 0.9rem);
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            overflow-wrap: anywhere;
+        }
+
+        .essential-highlight-description {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.75rem;
+            line-height: 1.35;
+        }
+
+        .essential-pax-count {
+            margin: 0;
+            color: var(--deep-plum);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .essential-venue-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin: 4px 0 0;
+            color: var(--text-muted);
+            font-size: 0.73rem;
+            line-height: 1.3;
+        }
+
+        .essential-venue-note i {
+            color: var(--rose-gold-dark);
+        }
+
+        .essential-dialog {
+            position: fixed;
+            inset: 50% auto auto 50%;
+            width: min(88vw, 360px);
+            min-height: min(440px, calc(100vh - 32px));
+            max-height: calc(100vh - 32px);
+            max-height: calc(100dvh - 32px);
+            margin: 0;
+            padding: 0;
+            overflow: auto;
+            border: 1px solid rgba(212, 175, 55, 0.75);
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)),
+                repeating-linear-gradient(45deg, #f5e9e4 0 1px, transparent 1px 12px);
+            box-shadow: var(--shadow-lg);
+            color: var(--deep-plum);
+            transform: translate(-50%, -50%);
+        }
+
+        .essential-dialog::backdrop {
+            background: rgba(38, 28, 40, 0.55);
+            backdrop-filter: blur(3px);
+        }
+
+        .essential-dialog-card {
+            display: flex;
+            min-height: min(440px, calc(100vh - 32px));
+            min-height: min(440px, calc(100dvh - 32px));
+            flex-direction: column;
+            justify-content: center;
+            padding: 34px 30px;
+        }
+
+        .essential-dialog-close {
+            align-self: flex-end;
+            width: 44px;
+            height: 44px;
+            margin: -18px -14px 16px 0;
+            border: 0;
+            border-radius: 50%;
+            background: var(--blush-pink);
+            color: var(--deep-plum);
+            cursor: pointer;
+            font: inherit;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .essential-dialog-eyebrow {
+            text-align: center;
+        }
+
+        .essential-dialog-title {
+            margin-bottom: 24px !important;
+        }
+
+        #loved-package-dialog {
+            width: min(94vw, 900px);
+            min-height: 0;
+            max-height: 90vh;
+            max-height: 90dvh;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            border-radius: var(--radius-lg);
+            background:
+                radial-gradient(ellipse at top left, rgba(248, 232, 238, 0.8), transparent 38rem),
+                var(--warm-cream);
+        }
+
+        #prestige-package-dialog {
+            width: min(94vw, 900px);
+            height: min(90vh, 720px);
+            max-width: none;
+            min-height: 0;
+            max-height: 90vh;
+            max-height: 90dvh;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            border-radius: var(--radius-lg);
+            background:
+                radial-gradient(ellipse at top left, rgba(248, 232, 238, 0.8), transparent 38rem),
+                var(--warm-cream);
+            color: var(--deep-plum);
+            box-shadow: var(--shadow-lg);
+        }
+
+        #prestige-package-dialog::backdrop {
+            background: rgba(38, 28, 40, 0.48);
+            backdrop-filter: blur(3px);
+        }
+
+        .prestige-package-dialog-card {
+            min-height: 0;
+            padding: 28px 20px 40px;
+            text-align: center;
+        }
+
+        #prestige-package-dialog .essential-back-button {
+            display: flex;
+            margin-bottom: 18px;
+        }
+
+        .prestige-package-content {
+            padding: 20px 0 26px;
+            text-align: center;
+        }
+
+        .prestige-package-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            color: var(--deep-plum);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(3.5rem, 11vw, 6.5rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            line-height: 0.98;
+        }
+
+        .prestige-package-edition {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 12px;
+            font-size: 0.72em;
+        }
+
+        .prestige-package-edition i {
+            margin-bottom: 8px;
+            color: var(--rose-gold);
+            font-size: 0.48em;
+        }
+
+        .prestige-package-price {
+            margin: 24px 0 8px;
+            color: var(--deep-plum);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.5rem, 7vw, 4rem);
+            font-weight: 500;
+            line-height: 1;
+        }
+
+        .prestige-package-subtitle {
+            margin: 0;
+            color: var(--deep-plum);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.7rem, 5vw, 2.5rem);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .prestige-package-promise {
+            max-width: 650px;
+            margin: 24px auto 0;
+            padding: 20px 24px;
+            border: 1px solid rgba(212, 175, 55, 0.65);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+        }
+
+        .prestige-package-promise p {
+            margin: 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.35rem, 3.5vw, 1.8rem);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .prestige-package-promise span {
+            display: block;
+            margin-top: 10px;
+            color: var(--rose-gold-dark);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+
+        .prestige-package-services {
+            margin-top: 32px;
+        }
+
+        #prestige-package-dialog .essential-services-heading {
+            margin: 0 0 22px;
+            color: var(--deep-plum);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.7rem, 5vw, 2.5rem);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .prestige-package-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 18px auto 14px;
+            color: var(--rose-gold);
+        }
+
+        .prestige-package-ornament::before,
+        .prestige-package-ornament::after {
+            width: 52px;
+            height: 1px;
+            background: var(--rose-gold);
+            content: "";
+        }
+
+        .loved-package-dialog-card {
+            min-height: 0;
+            padding: 28px 20px 40px;
+            text-align: center;
+        }
+
+        #loved-package-dialog .essential-back-button {
+            align-self: flex-start;
+            margin-bottom: 18px;
+        }
+
+        #loved-package-dialog h2 {
+            margin: 0 0 22px;
+            color: var(--deep-plum);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(1.7rem, 5vw, 2.5rem);
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .loved-package-content {
+            padding: 20px 0 26px;
+            text-align: center;
+        }
+
+        .loved-package-content h1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin: 0;
+            color: var(--deep-plum);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(3.5rem, 11vw, 6.5rem);
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            line-height: 1;
+        }
+
+        .loved-package-content h1 i {
+            color: var(--rose-gold);
+            font-size: 0.48em;
+        }
+
+        .loved-package-ornament {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 18px auto 14px;
+            color: var(--rose-gold);
+        }
+
+        .loved-package-ornament::before,
+        .loved-package-ornament::after {
+            width: 52px;
+            height: 1px;
+            background: var(--rose-gold);
+            content: "";
+        }
+
+        .loved-package-price {
+            margin: 0 0 8px !important;
+            color: var(--deep-plum);
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(2.5rem, 7vw, 4rem) !important;
+            font-weight: 500 !important;
+            line-height: 1;
+        }
+
+        .loved-package-inclusion {
+            position: relative;
+            display: grid;
+            width: min(100%, 350px);
+            aspect-ratio: 1;
+            place-content: center;
+            gap: 15px;
+            margin: 8px auto 0;
+            padding: 36px;
+            overflow: hidden;
+            border: 1px solid rgba(212, 175, 55, 0.7);
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.93), rgba(255, 255, 255, 0.93)),
+                repeating-linear-gradient(45deg, #f5e9e4 0 1px, transparent 1px 12px);
+            box-shadow: var(--shadow-lg);
+            text-align: center;
+        }
+
+        .loved-package-inclusion::before,
+        .loved-package-inclusion::after {
+            position: absolute;
+            width: 68px;
+            height: 68px;
+            border: 1px solid rgba(212, 175, 55, 0.6);
+            border-radius: 50%;
+            content: "";
+        }
+
+        .loved-package-inclusion::before {
+            top: -36px;
+            left: -36px;
+        }
+
+        .loved-package-inclusion::after {
+            right: -36px;
+            bottom: -36px;
+        }
+
+        .loved-package-inclusion-label {
+            margin: 0;
+            color: var(--rose-gold-dark);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .loved-package-pax {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin: 0;
+            color: var(--deep-plum);
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+        }
+
+        .loved-package-pax i {
+            color: var(--rose-gold-dark);
+            font-size: 1.1rem;
+        }
+
+        #loved-package-dialog .loved-package-services {
+            margin-top: 38px;
+        }
+
+        #loved-package-dialog .essential-service-grid {
+            text-align: left;
+        }
+
+        .essential-service-list {
+            display: grid;
+            gap: 18px;
+            margin: 0;
+            padding: 0 0 0 22px;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .essential-service-list li::marker {
+            color: var(--rose-gold-dark);
+        }
+
+        .loved-freebies-choice {
+            margin: 0 0 24px;
+            padding: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.65);
+            background: rgba(248, 232, 238, 0.45);
+        }
+
+        .loved-freebies-choice-title {
+            margin: 0 0 18px;
+            color: var(--rose-gold-dark);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .loved-freebies-choice-options {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+            align-items: center;
+            gap: 12px;
+        }
+
+        .loved-freebies-choice-option {
+            display: flex;
+            min-height: 112px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 8px;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            background: var(--white);
+            color: var(--deep-plum);
+            cursor: pointer;
+            font: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .loved-freebies-choice-option:hover {
+            transform: translateY(-2px);
+            border-color: var(--rose-gold);
+            background: #fffaf7;
+            box-shadow: var(--shadow-md);
+        }
+
+        .loved-freebies-choice-option:focus-visible {
+            outline: 3px solid var(--rose-gold);
+            outline-offset: 3px;
+        }
+
+        .loved-freebies-choice-option i {
+            color: var(--rose-gold-dark);
+            font-size: 1.6rem;
+        }
+
+        .loved-freebie-example-card {
+            gap: 0;
+            text-align: center;
+        }
+
+        .loved-freebie-example-image {
+            display: block;
+            width: 100%;
+            max-height: min(56vh, 520px);
+            margin: 0 auto;
+            border: 1px solid rgba(212, 175, 55, 0.65);
+            object-fit: contain;
+            background: var(--warm-cream);
+        }
+
+        .loved-package-summary {
+            position: relative;
+            margin-top: 28px;
+            padding: 24px 22px 18px;
+            border: 1px solid rgba(212, 175, 55, 0.45);
+            border-radius: var(--radius-md);
+            background: rgba(255, 255, 255, 0.88);
+            color: var(--deep-plum);
+            text-align: center;
+        }
+
+        .loved-package-summary-leaf {
+            position: absolute;
+            top: 12px;
+            color: rgba(184, 149, 43, 0.52);
+            font-size: 1.05rem;
+            pointer-events: none;
+        }
+
+        .loved-package-summary-leaf-left {
+            left: 12px;
+            transform: rotate(-35deg);
+        }
+
+        .loved-package-summary-leaf-right {
+            right: 12px;
+            transform: scaleX(-1) rotate(-35deg);
+        }
+
+        .loved-package-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            margin-bottom: 20px;
+        }
+
+        .loved-package-summary-item {
+            display: flex;
+            min-width: 0;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 12px;
+        }
+
+        .loved-package-summary-item + .loved-package-summary-item {
+            border-left: 1px dashed rgba(115, 103, 117, 0.38);
+        }
+
+        .loved-package-summary-icon {
+            color: var(--rose-gold-dark);
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+
+        .loved-package-summary-item:hover .loved-package-summary-icon {
+            transform: translateY(-2px);
+            color: var(--deep-plum);
+        }
+
+        .loved-package-summary-item h3 {
+            margin: 0;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .loved-package-summary-item p {
+            margin: 0;
+            color: var(--text-muted);
+            font-size: 0.76rem;
+            line-height: 1.45;
+        }
+
+        .loved-package-summary-slogan {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 0;
+            padding: 12px 18px;
+            border-radius: 999px;
+            background: #66594f;
+            color: var(--white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+
+        .loved-package-summary-slogan i {
+            flex: 0 0 auto;
+            color: #fff8ed;
+            font-size: 0.8rem;
+        }
+
+        @media (max-width: 768px) {
+            .loved-package-summary-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                row-gap: 16px;
+            }
+
+            .loved-package-summary-item {
+                padding: 4px 8px;
+            }
+
+            .loved-package-summary-item:nth-child(3) {
+                border-left: 0;
+            }
+
+            .loved-package-summary-item:nth-child(n + 3) {
+                padding-top: 14px;
+                border-top: 1px dashed rgba(115, 103, 117, 0.38);
+            }
+        }
+
+        .loved-freebies-choice-or {
+            color: var(--rose-gold-dark);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .container { padding-right: 16px; padding-left: 16px; }
+            .hero-title { font-size: clamp(2.2rem, 6vw, 2.8rem); }
+            .hero-subtitle { font-size: clamp(1.55rem, 4.5vw, 1.8rem); }
+            .slideshow-container { height: clamp(280px, 55vw, 380px); }
+            .dash-btn { min-height: 48px; justify-content: center; }
+            .about-card { padding: 25px; }
+            .nav-wrap { flex-direction: column; gap: 10px; }
+            .quick-stats { justify-content: center; flex-wrap: wrap; gap: 8px; }
+            .quick-stat-item { min-height: 40px; }
+            .essential-service-button { min-height: 62px; }
+        }
+
+        @media (max-width: 560px) {
+            .container { padding-right: 12px; padding-left: 12px; }
+            .nav-wrap { padding: 10px 0; }
+            .brand-logo { justify-content: center; gap: 7px; }
+            .brand-logo h1 { font-size: clamp(1.2rem, 5vw, 1.55rem); }
+            .brand-logo .script-font { font-size: clamp(1.45rem, 6vw, 1.85rem) !important; }
+            .quick-stats { font-size: 0.78rem; }
+            .quick-stat-item { padding: 6px 10px; }
+            .hero { padding: 36px 14px 24px; }
+            .hero-title { font-size: clamp(1.95rem, 9vw, 2.5rem); line-height: 1.05; }
+            .hero-subtitle { font-size: clamp(1.45rem, 7vw, 1.8rem); }
+            .hero-avatar-container { width: clamp(130px, 42vw, 160px); height: clamp(130px, 42vw, 160px); }
+            .hero-tagline { margin-bottom: 20px; font-size: 0.98rem; }
+            .dashboard-nav-section { margin-top: 34px; }
+            .dashboard-nav-title { font-size: clamp(1.8rem, 8vw, 2.2rem); margin-bottom: 18px; }
+            .dashboard-tabs { gap: 12px; }
+            .dash-btn { width: 100%; }
+            .slideshow-section { margin-top: 28px; }
+            .slideshow-container { height: clamp(250px, 76vw, 340px); border-width: 3px; border-radius: 16px; }
+            .slide-caption { padding: 28px 14px 16px; }
+            .slide-caption h3 { font-size: clamp(1.35rem, 6vw, 1.7rem); }
+            .slide-caption p { font-size: 0.82rem; }
+            .prev-btn, .next-btn { width: 44px; height: 44px; }
+            .prev-btn { left: 8px; }
+            .next-btn { right: 8px; }
+            .about-card { padding: 22px 18px; }
+            footer { margin-top: 48px; padding-top: 42px; }
+            .footer-grid { gap: 26px; }
+
+            #essential-dashboard {
+                width: 96vw;
+                max-height: calc(100vh - 24px);
+                max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 24px);
+                padding: 22px 16px 40px;
+            }
+
+            .essential-dialog {
+                width: calc(100vw - 24px);
+                min-height: min(400px, calc(100vh - 24px));
+                min-height: min(400px, calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 24px));
+                max-height: calc(100vh - 24px);
+                max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 24px);
+            }
+
+            .essential-dialog-card {
+                min-height: min(400px, calc(100vh - 24px));
+                min-height: min(400px, calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 24px));
+                padding: 28px 22px;
+            }
+
+            #loved-package-dialog {
+                width: calc(100vw - 24px);
+                max-height: calc(100vh - 24px);
+                max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 24px);
+            }
+
+            #prestige-package-dialog {
+                width: calc(100vw - 24px);
+                height: auto;
+                max-height: calc(100vh - 24px);
+                max-height: calc(100dvh - env(safe-area-inset-top) - env(safe-area-inset-bottom) - 24px);
+            }
+
+            .loved-package-dialog-card {
+                padding: 22px 16px 32px;
+            }
+
+            .prestige-package-dialog-card {
+                padding: 18px 16px 28px;
+            }
+
+            .loved-package-summary {
+                padding: 22px 12px 14px;
+            }
+
+            .loved-package-summary-slogan {
+                gap: 8px;
+                padding: 11px 12px;
+                font-size: 0.76rem;
+            }
+
+            .essential-header {
+                padding-top: 38px;
+            }
+
+            .essential-package-card {
+                margin-bottom: 42px;
+            }
+
+            .essential-service-grid {
+                grid-template-columns: 1fr;
+                gap: 11px;
+            }
+
+            .prestige-package-content { padding: 8px 0 18px; }
+            .prestige-package-title { font-size: clamp(3rem, 16vw, 4.5rem); }
+            .prestige-package-promise { margin-top: 18px; padding: 16px 14px; }
+            .prestige-package-promise span { line-height: 1.5; }
+            .prestige-package-services { margin-top: 24px; }
+            .loved-package-summary-grid { grid-template-columns: 1fr; }
+            .loved-package-summary-item + .loved-package-summary-item {
+                border-top: 1px dashed rgba(115, 103, 117, 0.38);
+                border-left: 0;
+                padding-top: 14px;
+            }
+            .loved-package-summary-slogan { border-radius: 12px; }
+
+            .essential-package-promise {
+                border-radius: 999px;
+                gap: 6px;
+                padding: 10px 7px;
+            }
+
+            .essential-highlight {
+                min-height: 130px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="home-view">
+    <!-- Top Sticky Header -->
+    <header>
+        <div class="container nav-wrap">
+            <a href="#" class="brand-logo">
+                <i class="fa-solid fa-rings-wedding" style="color: var(--rose-gold); font-size: 1.8rem;"></i>
+                <h1>BeYOUtiful <span class="script-font" style="font-size: 2.2rem; font-weight: normal;">Life Events</span></h1>
+            </a>
+            <div class="quick-stats">
+                <div class="quick-stat-item">
+                    <i class="fa-solid fa-heart" style="color: #e2574c;"></i>
+                    <span>Wedding Planner</span>
+                </div>
+                <div class="quick-stat-item">
+                    <i class="fa-solid fa-calendar-day" style="color: var(--rose-gold);"></i>
+                    <span id="daysCount">Counting Down</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Profile Logo -->
+    <section class="hero">
+        <div class="container">
+            <span class="hero-subtitle script-font">Welcome to Your Dream Day</span>
+            <h2 class="hero-title">BeYOUtiful Life Events</h2>
+            <span class="hero-subtitle script-font hero-byline">A work by heart</span>
+            
+            <div class="hero-avatar-container">
+                <img src="eventpfp.jpg" alt="BeYOUtiful Life Events Logo" class="hero-avatar" id="avatarImg" onerror="this.src='https://placehold.co/400x400/f8e8ee/4a354f?text=BeYOUtiful'">
+            </div>
+
+            <p class="hero-tagline">We Provide the event of your Dreams with a Very Reasonable Package. A Worriless Speacial Event.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="container">
+        <div class="about-card">
+            <h2>About Us</h2>
+            <p class="about-bio" id="aboutBio">
+                At <strong>BeYOUtiful Life Events</strong>
+                Rooted in Faith. Crafted by Heart. #WorkByHeart
+                At BeYOUtiful Life Events (BYLE), we believe that every celebration tells a story, every detail holds a memory, and every moment deserves to be beautiful.
+                Founded with passion, creativity, and faith, BeYOUtiful Life Events is an event planning and coordination team dedicated to turning your dream celebrations into unforgettable realities. Since our journey began, we have been committed to creating meaningful, elegant, and memorable experiences for every client we serve.
+                From intimate gatherings to grand celebrations, weddings, birthdays, debuts, corporate events, and other special occasions, we bring ideas to life through thoughtful planning, creative styling, seamless coordination, and heartfelt service.
+                But what makes BYLE truly special is not just what we create — it is the heart behind everything we do
+                We believe that every client deserves to feel valued, every event deserves our dedication, and every celebration deserves a team that cares as much as you do. Behind every setup, every detail, and every successful event is a family of passionate individuals working together with one purpose: to make your special moments extraordinary.
+                Our journey has taught us that success is not measured by the number of events we accomplish, but by the smiles we create, the trust we earn, and the beautiful memories we leave behind.
+                At BeYOUtiful Life Events, we don’t simply organize events. We create experiences, celebrate love, build connections, and turn precious moments into lasting memories.
+                Our mission is simple: to serve with passion, create with purpose, and deliver every celebration with love, excellence, and integrity.
+                Because for us, this is more than an event business. It is a passion, a purpose, and a promise to give our best in every celebration we handle.
+                ✨ BeYOUtiful Life Events
+                Your vision. Our passion. Beautiful memories made together.
+                #WorkByHeart | #BeYOUtifulLifeEvents
+                EST. 2018
+            </p>
+            <button class="about-bio-toggle" id="aboutBioToggle" type="button" aria-expanded="false" aria-controls="aboutBio">See More</button>
+        </div>
+    </section>
+
+    <!-- Interactive Photo Slideshow -->
+    <section class="container slideshow-section">
+        <div class="slideshow-container" id="slideshow">
+            <div class="slide active">
+                <img src="DSC_6683.jpg" alt="Romantic Venue">
+                <div class="slide-caption">
+                    <h3>Breathtaking Venues</h3>
+                    <p>Discover picturesque locations for your magical ceremony</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="14.jpg" alt="Wedding Couple">
+                <div class="slide-caption">
+                    <h3>Unforgettable Moments</h3>
+                    <p>Cherish every laugh, tear, and joyful dance step</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="11.jpg" alt="Floral Details">
+                <div class="slide-caption">
+                    <h3>Exquisite Decor</h3>
+                    <p>Elegant floral arrangements and ambient table settings</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="DSC_4488.jpg" alt="Wedding Cake">
+                <div class="slide-caption">
+                    <h3>Sweet Celebrations</h3>
+                    <p>Delightful dining and celebratory wedding cakes</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="13.jpg" alt="Wedding Cake">
+                <div class="slide-caption">
+                    <h3>Sweet Celebrations</h3>
+                    <p>Delightful dining and celebratory wedding cakes</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="DSC_7489.jpg" alt="Wedding Cake">
+                <div class="slide-caption">
+                    <h3>Sweet Celebrations</h3>
+                    <p>Delightful dining and celebratory wedding cakes</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="DSC_6877.jpg" alt="Wedding Cake">
+                <div class="slide-caption">
+                    <h3>Sweet Celebrations</h3>
+                    <p>Delightful dining and celebratory wedding cakes</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="12.jpg" alt="Wedding Cake">
+                <div class="slide-caption">
+                    <h3>Sweet Celebrations</h3>
+                    <p>Delightful dining and celebratory wedding cakes</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="DSC_0404.jpg" alt="Wedding Cake">
+                <div class="slide-caption">
+                    <h3>Sweet Celebrations</h3>
+                    <p>Delightful dining and celebratory wedding cakes</p>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="4.jpg" alt="Wedding Cake">
+                <div class="slide-caption">
+                    <h3>Sweet Celebrations</h3>
+                    <p>Delightful dining and celebratory wedding cakes</p>
+                </div>
+            </div>
+
+            <!-- Manual Controls -->
+            <button class="prev-btn" id="prevSlide" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="next-btn" id="nextSlide" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+
+        <div class="slideshow-dots" id="dotsContainer">
+            <button class="dot active" type="button" data-index="0" aria-label="Show slide 1 of 10" aria-pressed="true"></button>
+            <button class="dot" type="button" data-index="1" aria-label="Show slide 2 of 10" aria-pressed="false"></button>
+            <button class="dot" type="button" data-index="2" aria-label="Show slide 3 of 10" aria-pressed="false"></button>
+            <button class="dot" type="button" data-index="3" aria-label="Show slide 4 of 10" aria-pressed="false"></button>
+            <button class="dot" type="button" data-index="4" aria-label="Show slide 5 of 10" aria-pressed="false"></button>
+            <button class="dot" type="button" data-index="5" aria-label="Show slide 6 of 10" aria-pressed="false"></button>
+            <button class="dot" type="button" data-index="6" aria-label="Show slide 7 of 10" aria-pressed="false"></button>
+            <button class="dot" type="button" data-index="7" aria-label="Show slide 8 of 10" aria-pressed="false"></button>
+            <button class="dot" type="button" data-index="8" aria-label="Show slide 9 of 10" aria-pressed="false"></button>
+            <button class="dot" type="button" data-index="9" aria-label="Show slide 10 of 10" aria-pressed="false"></button>
+        </div>
+    </section>
+
+    <!-- Sub-Dashboard Navigation Section -->
+    <section class="container dashboard-nav-section">
+        <h2 class="dashboard-nav-title">Wedding Planning Hub</h2>
+        <div class="dashboard-tabs">
+            <button class="dash-btn" id="openEssentialDashboard" type="button" aria-label="Open dashboard 1"><span>99K</span></button>
+            <button class="dash-btn" id="openLovedPackage" type="button" aria-label="Open dashboard 2"><span>145K</span></button>
+            <button class="dash-btn" id="openPrestigePackage" type="button" aria-label="Open Prestige Edition package"><span>185K</span></button>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>BeYOUtiful Life Events</h4>
+                    <p style="font-style: italic; color: var(--rose-gold);">"Creating beautiful beginnings for your forever love story."</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100064152482092" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.google.com/maps/place/BeYOUtiful+Life+Events/@7.0570212,125.5454719,17z/data=!3m1!4b1!4m6!3m5!1s0x32f90d42330e65dd:0x372bff0c23edb6cb!8m2!3d7.0570159!4d125.5480468!16s%2Fg%2F11mkxm35ng?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D" class="social-icon" aria-label="Google"><i class="fa-solid fa-location-dot"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> 17 - 1 MCArthur Highway, ULAS, Davao City</p>
+                    <p><i class="fa-solid fa-city"></i> Davao City, Philippines, 8001</p>
+                    <p><i class="fa-solid fa-phone"></i> +63 915 172 9597</p>
+                    <p><i class="fa-solid fa-envelope"></i> 18byle@gmail.com</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Planning Tools</h4>
+                    <p><i class="fa-solid fa-check"></i> Event Planning </p>
+                    <p><i class="fa-solid fa-check"></i> Food & Venue</p>
+                    <p><i class="fa-solid fa-check"></i> Wedding Essentials</p>
+                    <p><i class="fa-solid fa-check"></i> Styling & Decoration</p>
+                    <p><i class="fa-solid fa-check"></i> Photography & Videography</p>
+                    <p><i class="fa-solid fa-check"></i> Hair & Makeup</p>
+                    <p><i class="fa-solid fa-check"></i> Gown & Suits</p>
+                    <p><i class="fa-solid fa-check"></i> Freebies</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 BeYOUtiful Life Events. All rights reserved. Crafted with romantic elegance.</p>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+    <dialog id="essential-dashboard" aria-labelledby="essential-title">
+        <main class="essential-page">
+            <button class="essential-back-button" id="closeEssentialDashboard" type="button">← Back to Home</button>
+
+            <header class="essential-header">
+                <p class="essential-eyebrow">BeYOUtiful Life Events</p>
+                <h1 id="essential-title" tabindex="-1">Essential</h1>
+                <div class="essential-title-ornament" aria-hidden="true">✿</div>
+            </header>
+
+            <section aria-labelledby="essential-package-title">
+                <h2 id="essential-package-title">Complete Wedding Package</h2>
+                <div class="essential-package-card">
+                    <p class="essential-package-kicker">Your day, beautifully planned</p>
+                    <p class="essential-package-price">99k All-In<br>Package</p>
+                    <p class="essential-package-note">A celebration made unforgettable</p>
+                </div>
+            </section>
+
+            <section aria-labelledby="essential-services-title">
+                <h2 class="essential-services-heading" id="essential-services-title">Explore Our Services</h2>
+                <div class="essential-service-grid">
+                    <button class="essential-service-button" id="openEventPlanningDialog" type="button" aria-haspopup="dialog" aria-controls="essential-event-planning-dialog"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>Event Planning</button>
+                    <button class="essential-service-button" id="openFoodVenueDialog" type="button" aria-haspopup="dialog" aria-controls="essential-food-venue-dialog"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Food &amp; Venue</button>
+                    <button class="essential-service-button" id="openWeddingEssentialsDialog" type="button" aria-haspopup="dialog" aria-controls="essential-wedding-essentials-dialog"><i class="fa-solid fa-spa" aria-hidden="true"></i>Wedding Essentials</button>
+                    <button class="essential-service-button" id="openStylingDecorationDialog" type="button" aria-haspopup="dialog" aria-controls="essential-styling-decoration-dialog"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Styling &amp; Decoration</button>
+                    <button class="essential-service-button" id="openPhotographyDialog" type="button" aria-haspopup="dialog" aria-controls="essential-photography-dialog"><i class="fa-solid fa-camera" aria-hidden="true"></i>Photography</button>
+                    <button class="essential-service-button" id="openHairMakeupDialog" type="button" aria-haspopup="dialog" aria-controls="essential-hair-makeup-dialog"><i class="fa-solid fa-face-smile" aria-hidden="true"></i>Hair &amp; Makeup</button>
+                    <button class="essential-service-button" id="openGownSuitsDialog" type="button" aria-haspopup="dialog" aria-controls="essential-gown-suits-dialog"><i class="fa-solid fa-shirt" aria-hidden="true"></i>Gown &amp; Suits</button>
+                    <button class="essential-service-button" id="openFreebiesDialog" type="button" aria-haspopup="dialog" aria-controls="essential-freebies-dialog"><i class="fa-solid fa-gift" aria-hidden="true"></i>Freebies</button>
+                </div>
+            </section>
+
+            <section class="essential-package-details" aria-label="Package highlights">
+                <p class="essential-package-benefits">
+                    <span class="essential-benefit"><i class="fa-solid fa-gem" aria-hidden="true"></i>Elegant</span>
+                    <span class="essential-benefit"><i class="fa-solid fa-check-double" aria-hidden="true"></i>Complete</span>
+                    <span class="essential-benefit"><i class="fa-solid fa-heart" aria-hidden="true"></i>Hassle-free</span>
+                </p>
+                <p class="essential-package-promise">
+                    <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                    <span>Everything you need for your <span class="essential-script-accent">special day</span></span>
+                    <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                </p>
+                <div class="essential-package-highlights">
+                    <div class="essential-highlight">
+                        <i class="fa-solid fa-award essential-highlight-icon" aria-hidden="true"></i>
+                        <p class="essential-highlight-label essential-customizable">Customizable</p>
+                        <p class="essential-highlight-description">Can be customized according to your needs.</p>
+                    </div>
+                    <div class="essential-highlight">
+                        <i class="fa-solid fa-people-group essential-highlight-icon" aria-hidden="true"></i>
+                        <p class="essential-pax-count">50 pax</p>
+                        <p class="essential-venue-note"><i class="fa-regular fa-clock" aria-hidden="true"></i>3 hours venue all-in package</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </dialog>
+
+    <dialog class="essential-dialog" id="essential-event-planning-dialog" aria-labelledby="essential-event-planning-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Event Planning details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="essential-event-planning-title">Event Planning</h2>
+            <ul class="essential-service-list">
+                <li>Wedding Organizer</li>
+                <li>2 Wedding Coordinators</li>
+                <li>Professional Host &amp; DJ</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-event-planning-dialog" aria-labelledby="loved-event-planning-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Most Loved Event Planning details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="loved-event-planning-title">Event Planning</h2>
+            <ul class="essential-service-list">
+                <li>Wedding Organizer</li>
+                <li>3 Wedding Coordinators</li>
+                <li>Professional Host &amp; DJ</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-package-dialog" aria-labelledby="loved-package-title">
+        <div class="essential-dialog-card loved-package-dialog-card">
+            <button class="essential-back-button" id="closeLovedPackage" type="button">← Back to Home</button>
+            <section class="loved-package-content">
+                <h1 id="loved-package-title">Most Loved <i class="fa-solid fa-star" aria-hidden="true"></i></h1>
+                <div class="loved-package-ornament" aria-hidden="true">✿</div>
+                <p class="loved-package-price">145k</p>
+                <h2>Complete Wedding Package</h2>
+            </section>
+            <div class="loved-package-inclusion">
+                <p class="loved-package-inclusion-label">All-In Package</p>
+                <p class="loved-package-pax"><i class="fa-solid fa-people-group" aria-hidden="true"></i>GOOD FOR 100 PAX</p>
+            </div>
+            <section class="loved-package-services" aria-labelledby="loved-package-services-title">
+                <h2 class="essential-services-heading" id="loved-package-services-title">Explore Our Services</h2>
+                <div class="essential-service-grid" id="loved-package-service-grid">
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-event-planning-dialog" data-dialog="loved-event-planning-dialog"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>Event Planning</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-food-venue-dialog" data-dialog="loved-food-venue-dialog"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Food &amp; Venue (Good for 100 Pax)</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-wedding-essentials-dialog" data-dialog="loved-wedding-essentials-dialog"><i class="fa-solid fa-spa" aria-hidden="true"></i>Wedding Essentials</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-styling-decoration-dialog" data-dialog="loved-styling-decoration-dialog"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Styling &amp; Decoration</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-photography-dialog" data-dialog="loved-photography-dialog"><i class="fa-solid fa-camera" aria-hidden="true"></i>Photography</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-hair-makeup-dialog" data-dialog="loved-hair-makeup-dialog"><i class="fa-solid fa-face-smile" aria-hidden="true"></i>Hair &amp; Makeup</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-gown-suits-dialog" data-dialog="loved-gown-suits-dialog"><i class="fa-solid fa-shirt" aria-hidden="true"></i>Gown &amp; Suits</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-freebies-dialog" data-dialog="loved-freebies-dialog"><i class="fa-solid fa-gift" aria-hidden="true"></i>Freebies</button>
+                </div>
+            </section>
+            <section class="loved-package-summary" aria-label="Package highlights">
+                <i class="fa-solid fa-leaf loved-package-summary-leaf loved-package-summary-leaf-left" aria-hidden="true"></i>
+                <i class="fa-solid fa-leaf loved-package-summary-leaf loved-package-summary-leaf-right" aria-hidden="true"></i>
+                <div class="loved-package-summary-grid">
+                    <article class="loved-package-summary-item">
+                        <i class="fa-solid fa-shield-heart loved-package-summary-icon" aria-hidden="true"></i>
+                        <h3>COMPLETE &amp; WORRY-FREE</h3>
+                        <p>We’ve got everything you need for your special day!</p>
+                    </article>
+                    <article class="loved-package-summary-item">
+                        <i class="fa-solid fa-people-group loved-package-summary-icon" aria-hidden="true"></i>
+                        <h3>100 PAX</h3>
+                        <p>Good for 100 Guests.</p>
+                    </article>
+                    <article class="loved-package-summary-item">
+                        <i class="fa-regular fa-clock loved-package-summary-icon" aria-hidden="true"></i>
+                        <h3>3 HOURS VENUE</h3>
+                        <p>Airconditioned Comfort.</p>
+                    </article>
+                    <article class="loved-package-summary-item">
+                        <i class="fa-solid fa-award loved-package-summary-icon" aria-hidden="true"></i>
+                        <h3>CUSTOMIZABLE</h3>
+                        <p>Can be customized according to your needs.</p>
+                    </article>
+                </div>
+                <p class="loved-package-summary-slogan">
+                    <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                    <span>Elegant • Timeless • Memorable – We make your special day perfect!</span>
+                    <i class="fa-solid fa-heart" aria-hidden="true"></i>
+                </p>
+            </section>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="prestige-package-dialog" aria-labelledby="prestige-package-title">
+        <div class="prestige-package-dialog-card">
+            <button class="essential-back-button" id="closePrestigePackage" type="button">← Back to Home</button>
+            <section class="prestige-package-content">
+                <h1 class="prestige-package-title" id="prestige-package-title">
+                    <span>Prestige</span>
+                    <span class="prestige-package-edition">
+                        <i class="fa-solid fa-gem" aria-hidden="true"></i>
+                        <span>Edition</span>
+                    </span>
+                </h1>
+                <div class="prestige-package-ornament" aria-hidden="true">✿</div>
+                <p class="prestige-package-price">185k</p>
+                <h2 class="prestige-package-subtitle">Complete Wedding Package</h2>
+                <div class="prestige-package-promise">
+                    <p>Every detail thoughtfully arranged, every moment worth remembering.</p>
+                    <span>AN ELEGANT BEGINNING TO FOREVER</span>
+                </div>
+            </section>
+            <section class="prestige-package-services" aria-labelledby="prestige-package-services-title">
+                <h2 class="essential-services-heading" id="prestige-package-services-title">Explore Our Services</h2>
+                <div class="essential-service-grid" id="prestige-package-service-grid">
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="loved-event-planning-dialog" data-dialog="loved-event-planning-dialog"><i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>Event Planning</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="prestige-food-venue-dialog" data-dialog="prestige-food-venue-dialog"><i class="fa-solid fa-utensils" aria-hidden="true"></i>Food &amp; Venue</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="prestige-wedding-essentials-dialog" data-dialog="prestige-wedding-essentials-dialog"><i class="fa-solid fa-spa" aria-hidden="true"></i>Wedding Essentials</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="prestige-styling-decoration-dialog" data-dialog="prestige-styling-decoration-dialog"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>Styling &amp; Decoration</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="prestige-photography-dialog" data-dialog="prestige-photography-dialog"><i class="fa-solid fa-camera" aria-hidden="true"></i>Photography</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="prestige-hair-makeup-dialog" data-dialog="prestige-hair-makeup-dialog"><i class="fa-solid fa-face-smile" aria-hidden="true"></i>Hair &amp; Makeup</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="prestige-gown-suits-dialog" data-dialog="prestige-gown-suits-dialog"><i class="fa-solid fa-shirt" aria-hidden="true"></i>Gown &amp; Suits</button>
+                    <button class="essential-service-button" type="button" aria-haspopup="dialog" aria-controls="prestige-freebies-dialog" data-dialog="prestige-freebies-dialog"><i class="fa-solid fa-gift" aria-hidden="true"></i>Freebies</button>
+                </div>
+            </section>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="essential-wedding-essentials-dialog" aria-labelledby="essential-wedding-essentials-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Wedding Essentials details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="essential-wedding-essentials-title">Wedding Essentials</h2>
+            <ul class="essential-service-list">
+                <li>Bridal Flower &amp; Entourage Bouquets</li>
+                <li>20–30pcs Corsage Boutonnieres</li>
+                <li>Chord, Veil, Pillows</li>
+                <li>10 Pcs Wedding Invitation</li>
+                <li>Photo Guestbook</li>
+                <li>Pins &amp; Sash / Treasure Box</li>
+                <li>Entrance Welcome Photo Signage</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-wedding-essentials-dialog" aria-labelledby="loved-wedding-essentials-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Most Loved Wedding Essentials details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="loved-wedding-essentials-title">Wedding Essentials</h2>
+            <ul class="essential-service-list">
+                <li>Bridal Flower &amp; Entourage Bouquets</li>
+                <li>30–40pcs Corsage Boutonnieres</li>
+                <li>Chord, Veil, Pillows</li>
+                <li>15 Pcs Wedding Invitation</li>
+                <li>Photo Guestbook</li>
+                <li>Pins &amp; Sash / Treasure Box</li>
+                <li>Entrance Welcome Photo Signage</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="prestige-wedding-essentials-dialog" aria-labelledby="prestige-wedding-essentials-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Prestige Wedding Essentials details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="prestige-wedding-essentials-title">Wedding Essentials</h2>
+            <ul class="essential-service-list">
+                <li>Bridal Flower &amp; Entourage Bouquets</li>
+                <li>40-50pcs Corsage Buttonnieres</li>
+                <li>Customized Chord, Veil, Pillows, Bible</li>
+                <li>20 Pcs Wedding Invitation</li>
+                <li>Photo Guestbook</li>
+                <li>Pins &amp; Sash / Treasure Box</li>
+                <li>Entrance Welcome Photo Signage</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="essential-styling-decoration-dialog" aria-labelledby="essential-styling-decoration-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Styling and Decoration details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="essential-styling-decoration-title">Styling &amp; Decoration</h2>
+            <ul class="essential-service-list">
+                <li>Minimalist Classic Setup</li>
+                <li>Stage &amp; Ceiling Decorations</li>
+                <li>Presidentials &amp; Guest Table Styling</li>
+                <li>Entrance setup</li>
+                <li>Basic Lights &amp; Sounds</li>
+                <li>Projector &amp; Widescreen</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-styling-decoration-dialog" aria-labelledby="loved-styling-decoration-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Most Loved Styling and Decoration details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="loved-styling-decoration-title">Styling &amp; Decoration</h2>
+            <ul class="essential-service-list">
+                <li>Elegance Premium Look</li>
+                <li>Stage &amp; Ceiling Decorations</li>
+                <li>Presidentials &amp; Guest Table Styling</li>
+                <li>Entrance setup</li>
+                <li>Church/Ceremony Decorations</li>
+                <li>Basic Lights &amp; Sounds</li>
+                <li>Projector &amp; Widescreen</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="prestige-styling-decoration-dialog" aria-labelledby="prestige-styling-decoration-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Prestige Styling and Decoration details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="prestige-styling-decoration-title">Styling &amp; Decoration</h2>
+            <ul class="essential-service-list">
+                <li>Luxury Themed Wedding</li>
+                <li>Upgraded Stage &amp; Ceiling Decorations</li>
+                <li>Elegant Presidentials &amp; Guest Table Styling</li>
+                <li>Entrance setup &amp; Customized Tunnel</li>
+                <li>Church/Ceremony/Garden Setup</li>
+                <li>Upgraded Lights &amp; Sounds</li>
+                <li>Projector &amp; Widescreen</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="essential-photography-dialog" aria-labelledby="essential-photography-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Photography details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="essential-photography-title">Photography</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Shoot (Studio Only)</li>
+                <li>OTD Photographer Full Cover</li>
+                <li>Same Day Edit Photo</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-photography-dialog" aria-labelledby="loved-photography-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Most Loved Photography details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="loved-photography-title">Photography</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Photo &amp; Video</li>
+                <li>OTD Photographer Full Cover</li>
+                <li>Wedding Video Highlights (3–5 days posting time)</li>
+                <li>Same Day Edit Photo</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="prestige-photography-dialog" aria-labelledby="prestige-photography-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Prestige Photography details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="prestige-photography-title">Photography</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Photo &amp; Video</li>
+                <li>Aerial Drone Coverage</li>
+                <li>OTD Photographer Full Cover</li>
+                <li>OTD Videographer Full Cover</li>
+                <li>Same Day Edit Photo</li>
+                <li>Same Day Edit Video</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="essential-hair-makeup-dialog" aria-labelledby="essential-hair-makeup-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Hair and Makeup details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="essential-hair-makeup-title">Hair &amp; Makeup</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Hair &amp; Make-up</li>
+                <li>OTD Bridal Hair &amp; Make-up</li>
+                <li>1 Maid of Honor, 2 Bridesmaids, 2 Mothers &amp; Groom</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-hair-makeup-dialog" aria-labelledby="loved-hair-makeup-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Most Loved Hair and Makeup details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="loved-hair-makeup-title">Hair &amp; Makeup</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Hair &amp; Make-up</li>
+                <li>OTD Bridal Hair &amp; Make-up</li>
+                <li>1 Maid of Honor, 4 Bridesmaids, 2 Mothers &amp; Groom</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="prestige-hair-makeup-dialog" aria-labelledby="prestige-hair-makeup-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Prestige Hair and Makeup details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="prestige-hair-makeup-title">Hair &amp; Makeup</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Hair &amp; Make-up</li>
+                <li>OTD Bridal Hair &amp; Make-up (Airbrush)</li>
+                <li>1 Maid of Honor, 4 Bridesmaids, 2 Mothers, 3 Flowergirls &amp; Groom</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="essential-gown-suits-dialog" aria-labelledby="essential-gown-suits-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Gown and Suits details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="essential-gown-suits-title">Gown &amp; Suits</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Gown &amp; Suit</li>
+                <li>OTD Bridal Gown (Classic Standard)</li>
+                <li>1 Maid of Honor, 2 Bridesmaids, 2 Mothers</li>
+                <li>1 Groom (Suit or Barong) Set</li>
+                <li>1 Bestman, 2 Groomsmen, 2 Fathers</li>
+                <li>3 Bearers &amp; 3 Flower Girls (Males upper only)</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-gown-suits-dialog" aria-labelledby="loved-gown-suits-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Most Loved Gown and Suits details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="loved-gown-suits-title">Gown &amp; Suits</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Gown &amp; Suit</li>
+                <li>OTD Bridal Gown (Classic Standard)</li>
+                <li>1 Maid of Honor, 4 Bridesmaids, 2 Mothers</li>
+                <li>1 Groom (Suit or Barong) Set</li>
+                <li>1 Bestman, 4 Groomsmen, 2 Fathers</li>
+                <li>3 Bearers &amp; 3 Flower Girls (Males upper only)</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="prestige-gown-suits-dialog" aria-labelledby="prestige-gown-suits-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Prestige Gown and Suits details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="prestige-gown-suits-title">Gown &amp; Suits</h2>
+            <ul class="essential-service-list">
+                <li>Pre-nuptial Gown &amp; Suit</li>
+                <li>OTD Bridal Gown (Classic Standard)</li>
+                <li>1 Maid of Honor, 4 Bridesmaids, 2Mothers</li>
+                <li>1 Groom (Suit or Barong) Set</li>
+                <li>1 Bestman, 4 Groomsmen, 2 Fathers</li>
+                <li>3 Bearers &amp; 3 Flower Girls (Whole set)</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="essential-freebies-dialog" aria-labelledby="essential-freebies-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Freebies details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="essential-freebies-title">Freebies</h2>
+            <ul class="essential-service-list">
+                <li>Photobooth</li>
+                <li>Bridal Car "Flower" only</li>
+                <li>Customized Couples Name or Monogram for Stage</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-freebies-dialog" aria-labelledby="loved-freebies-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Freebies details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="loved-freebies-title">Freebies</h2>
+            <section class="loved-freebies-choice" aria-labelledby="loved-freebies-choice-title">
+                <h3 class="loved-freebies-choice-title" id="loved-freebies-choice-title">Choose One:</h3>
+                <div class="loved-freebies-choice-options">
+                    <button class="loved-freebies-choice-option" type="button" aria-haspopup="dialog" aria-controls="loved-photobooth-example-dialog" data-example-dialog="loved-photobooth-example-dialog">
+                        <i class="fa-solid fa-camera-retro" aria-hidden="true"></i>
+                        <span>Photobooth</span>
+                    </button>
+                    <span class="loved-freebies-choice-or">OR</span>
+                    <button class="loved-freebies-choice-option" type="button" aria-haspopup="dialog" aria-controls="loved-picapica-example-dialog" data-example-dialog="loved-picapica-example-dialog">
+                        <i class="fa-solid fa-bowl-food" aria-hidden="true"></i>
+                        <span>Pica-Pica</span>
+                    </button>
+                </div>
+            </section>
+            <ul class="essential-service-list">
+                <li>Customized Couples Name or Monogram for Stage</li>
+                <li>Energy Charge</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="prestige-freebies-dialog" aria-labelledby="prestige-freebies-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Prestige Freebies details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="prestige-freebies-title">Freebies</h2>
+            <ul class="essential-service-list">
+                <li>Photobooth &amp; Pica-Pica</li>
+                <li>Bridal Car</li>
+                <li>Customized Couples Name or Monogram for Stage</li>
+                <li>Energy Charge</li>
+                <li>Crewmeals x2</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog loved-freebie-example-dialog" id="loved-photobooth-example-dialog" aria-labelledby="loved-photobooth-example-title">
+        <div class="essential-dialog-card loved-freebie-example-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Photobooth example">&times;</button>
+            <p class="essential-dialog-eyebrow">Package example</p>
+            <h2 class="essential-dialog-title" id="loved-photobooth-example-title">Photobooth</h2>
+            <img class="loved-freebie-example-image" src="DSC_8364.jpg" alt="Photobooth example photo">
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog loved-freebie-example-dialog" id="loved-picapica-example-dialog" aria-labelledby="loved-picapica-example-title">
+        <div class="essential-dialog-card loved-freebie-example-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Pica-Pica example">&times;</button>
+            <p class="essential-dialog-eyebrow">Package example</p>
+            <h2 class="essential-dialog-title" id="loved-picapica-example-title">Pica-Pica</h2>
+            <img class="loved-freebie-example-image" src="DSC_8075.jpg" alt="Pica-Pica example photo">
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="essential-food-venue-dialog" aria-labelledby="essential-food-venue-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Food and Venue details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="essential-food-venue-title">Food &amp; Venue</h2>
+            <ul class="essential-service-list">
+                <li>4 Viands, 1 Macaroni (50 pax)</li>
+                <li>Rice &amp; Softdrinks + Utensils</li>
+                <li>4 waiters &amp; buffet setup</li>
+                <li>3 Hours Airconditioned Venue</li>
+                <li>1 Layered Cake &amp; 1 Wine</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="loved-food-venue-dialog" aria-labelledby="loved-food-venue-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Most Loved Food and Venue details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="loved-food-venue-title">Food &amp; Venue (Good for 100 Pax)</h2>
+            <ul class="essential-service-list">
+                <li>3 Main Dish</li>
+                <li>1 Dessert</li>
+                <li>1 Mixed Fruits</li>
+                <li>Rice &amp; Softdrinks</li>
+                <li>5 Waiters &amp; Buffet Setup</li>
+                <li>3 Hours Airconditioned Venue</li>
+                <li>1 Layered Cake &amp; 1 Wine</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <dialog class="essential-dialog" id="prestige-food-venue-dialog" aria-labelledby="prestige-food-venue-title">
+        <div class="essential-dialog-card">
+            <button class="essential-dialog-close" type="button" aria-label="Close Prestige Food and Venue details">&times;</button>
+            <p class="essential-dialog-eyebrow">Included in your package</p>
+            <h2 class="essential-dialog-title" id="prestige-food-venue-title">Food &amp; Venue</h2>
+            <ul class="essential-service-list">
+                <li>4 Viands, 1 Macaronie (100 pax)</li>
+                <li>Rice &amp; Softdrinks + Utensils</li>
+                <li>6 waiters &amp; buffet setup</li>
+                <li>3 Hours Airconditioned Venue</li>
+                <li>2 Layered Cake &amp; 1 Wine</li>
+            </ul>
+        </div>
+    </dialog>
+
+    <script>
+        const essentialDashboard = document.getElementById('essential-dashboard');
+        const openEssentialDashboard = document.getElementById('openEssentialDashboard');
+        const closeEssentialDashboard = document.getElementById('closeEssentialDashboard');
+        const openLovedPackage = document.getElementById('openLovedPackage');
+        const lovedPackageDialog = document.getElementById('loved-package-dialog');
+        const closeLovedPackage = document.getElementById('closeLovedPackage');
+        const openPrestigePackage = document.getElementById('openPrestigePackage');
+        const prestigePackageDialog = document.getElementById('prestige-package-dialog');
+        const closePrestigePackage = document.getElementById('closePrestigePackage');
+        const essentialTitle = document.getElementById('essential-title');
+        const openEventPlanningDialog = document.getElementById('openEventPlanningDialog');
+        const eventPlanningDialog = document.getElementById('essential-event-planning-dialog');
+        const lovedEventPlanningDialog = document.getElementById('loved-event-planning-dialog');
+        const lovedStylingDecorationDialog = document.getElementById('loved-styling-decoration-dialog');
+        const prestigeStylingDecorationDialog = document.getElementById('prestige-styling-decoration-dialog');
+        const lovedFoodVenueDialog = document.getElementById('loved-food-venue-dialog');
+        const prestigeFoodVenueDialog = document.getElementById('prestige-food-venue-dialog');
+        const lovedWeddingEssentialsDialog = document.getElementById('loved-wedding-essentials-dialog');
+        const prestigeWeddingEssentialsDialog = document.getElementById('prestige-wedding-essentials-dialog');
+        const lovedPhotographyDialog = document.getElementById('loved-photography-dialog');
+        const prestigePhotographyDialog = document.getElementById('prestige-photography-dialog');
+        const lovedGownSuitsDialog = document.getElementById('loved-gown-suits-dialog');
+        const prestigeGownSuitsDialog = document.getElementById('prestige-gown-suits-dialog');
+        const lovedHairMakeupDialog = document.getElementById('loved-hair-makeup-dialog');
+        const prestigeHairMakeupDialog = document.getElementById('prestige-hair-makeup-dialog');
+        const openWeddingEssentialsDialog = document.getElementById('openWeddingEssentialsDialog');
+        const weddingEssentialsDialog = document.getElementById('essential-wedding-essentials-dialog');
+        const openStylingDecorationDialog = document.getElementById('openStylingDecorationDialog');
+        const stylingDecorationDialog = document.getElementById('essential-styling-decoration-dialog');
+        const openPhotographyDialog = document.getElementById('openPhotographyDialog');
+        const photographyDialog = document.getElementById('essential-photography-dialog');
+        const openHairMakeupDialog = document.getElementById('openHairMakeupDialog');
+        const hairMakeupDialog = document.getElementById('essential-hair-makeup-dialog');
+        const openGownSuitsDialog = document.getElementById('openGownSuitsDialog');
+        const gownSuitsDialog = document.getElementById('essential-gown-suits-dialog');
+        const openFreebiesDialog = document.getElementById('openFreebiesDialog');
+        const freebiesDialog = document.getElementById('essential-freebies-dialog');
+        const lovedFreebiesDialog = document.getElementById('loved-freebies-dialog');
+        const prestigeFreebiesDialog = document.getElementById('prestige-freebies-dialog');
+        const lovedFreebieChoiceOptions = document.querySelector('.loved-freebies-choice-options');
+        const lovedFreebieExampleDialogs = document.querySelectorAll('.loved-freebie-example-dialog');
+        const openFoodVenueDialog = document.getElementById('openFoodVenueDialog');
+        const foodVenueDialog = document.getElementById('essential-food-venue-dialog');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initSlideshow();
+            initAboutBioToggle();
+        });
+
+        openEssentialDashboard.addEventListener('click', () => {
+            essentialDashboard.showModal();
+            essentialTitle.focus();
+        });
+
+        closeEssentialDashboard.addEventListener('click', () => {
+            essentialDashboard.close();
+        });
+
+        essentialDashboard.addEventListener('close', () => {
+            openEssentialDashboard.focus();
+        });
+
+        essentialDashboard.addEventListener('click', (event) => {
+            if (event.target === essentialDashboard) {
+                essentialDashboard.close();
+            }
+        });
+
+        openLovedPackage.addEventListener('click', () => {
+            lovedPackageDialog.showModal();
+            closeLovedPackage.focus();
+        });
+
+        closeLovedPackage.addEventListener('click', () => {
+            lovedPackageDialog.close();
+        });
+
+        lovedPackageDialog.addEventListener('close', () => {
+            openLovedPackage.focus();
+        });
+
+        openPrestigePackage.addEventListener('click', () => {
+            prestigePackageDialog.showModal();
+            closePrestigePackage.focus();
+        });
+
+        closePrestigePackage.addEventListener('click', () => {
+            prestigePackageDialog.close();
+        });
+
+        prestigePackageDialog.addEventListener('close', () => {
+            openPrestigePackage.focus();
+        });
+
+        prestigePackageDialog.addEventListener('click', (event) => {
+            if (event.target === prestigePackageDialog) {
+                prestigePackageDialog.close();
+            }
+        });
+
+        document.querySelectorAll('#loved-package-service-grid, #prestige-package-service-grid').forEach((serviceGrid) => {
+            serviceGrid.addEventListener('click', (event) => {
+                const serviceButton = event.target.closest('button[data-dialog]');
+                if (serviceButton) {
+                    document.getElementById(serviceButton.dataset.dialog).showModal();
+                }
+            });
+        });
+
+        lovedFreebiesDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            lovedFreebiesDialog.close();
+        });
+
+        prestigeFreebiesDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            prestigeFreebiesDialog.close();
+        });
+
+        lovedFreebieChoiceOptions.addEventListener('click', (event) => {
+            const choiceButton = event.target.closest('button[data-example-dialog]');
+            if (choiceButton) {
+                document.getElementById(choiceButton.dataset.exampleDialog).showModal();
+            }
+        });
+
+        lovedFreebieExampleDialogs.forEach((dialog) => {
+            dialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+                dialog.close();
+            });
+
+            dialog.addEventListener('click', (event) => {
+                if (event.target === dialog) {
+                    dialog.close();
+                }
+            });
+        });
+
+        lovedEventPlanningDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            lovedEventPlanningDialog.close();
+        });
+
+        lovedStylingDecorationDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            lovedStylingDecorationDialog.close();
+        });
+
+        prestigeStylingDecorationDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            prestigeStylingDecorationDialog.close();
+        });
+
+        lovedFoodVenueDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            lovedFoodVenueDialog.close();
+        });
+
+        prestigeFoodVenueDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            prestigeFoodVenueDialog.close();
+        });
+
+        lovedWeddingEssentialsDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            lovedWeddingEssentialsDialog.close();
+        });
+
+        prestigeWeddingEssentialsDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            prestigeWeddingEssentialsDialog.close();
+        });
+
+        lovedPhotographyDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            lovedPhotographyDialog.close();
+        });
+
+        prestigePhotographyDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            prestigePhotographyDialog.close();
+        });
+
+        lovedGownSuitsDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            lovedGownSuitsDialog.close();
+        });
+
+        prestigeGownSuitsDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            prestigeGownSuitsDialog.close();
+        });
+
+        lovedHairMakeupDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            lovedHairMakeupDialog.close();
+        });
+
+        prestigeHairMakeupDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            prestigeHairMakeupDialog.close();
+        });
+
+        lovedPackageDialog.addEventListener('click', (event) => {
+            if (event.target === lovedPackageDialog) {
+                lovedPackageDialog.close();
+            }
+        });
+
+        openEventPlanningDialog.addEventListener('click', () => {
+            eventPlanningDialog.showModal();
+        });
+
+        eventPlanningDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            eventPlanningDialog.close();
+        });
+
+        openWeddingEssentialsDialog.addEventListener('click', () => {
+            weddingEssentialsDialog.showModal();
+        });
+
+        weddingEssentialsDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            weddingEssentialsDialog.close();
+        });
+
+        openStylingDecorationDialog.addEventListener('click', () => {
+            stylingDecorationDialog.showModal();
+        });
+
+        stylingDecorationDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            stylingDecorationDialog.close();
+        });
+
+        openPhotographyDialog.addEventListener('click', () => {
+            photographyDialog.showModal();
+        });
+
+        photographyDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            photographyDialog.close();
+        });
+
+        openHairMakeupDialog.addEventListener('click', () => {
+            hairMakeupDialog.showModal();
+        });
+
+        hairMakeupDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            hairMakeupDialog.close();
+        });
+
+        openGownSuitsDialog.addEventListener('click', () => {
+            gownSuitsDialog.showModal();
+        });
+
+        gownSuitsDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            gownSuitsDialog.close();
+        });
+
+        openFreebiesDialog.addEventListener('click', () => {
+            freebiesDialog.showModal();
+        });
+
+        freebiesDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            freebiesDialog.close();
+        });
+
+        openFoodVenueDialog.addEventListener('click', () => {
+            foodVenueDialog.showModal();
+        });
+
+        foodVenueDialog.querySelector('.essential-dialog-close').addEventListener('click', () => {
+            foodVenueDialog.close();
+        });
+
+        function initAboutBioToggle() {
+            const bio = document.getElementById('aboutBio');
+            const toggle = document.getElementById('aboutBioToggle');
+            const collapsedLines = 4;
+            let expanded = false;
+
+            function updateBioHeight() {
+                const lineHeight = parseFloat(window.getComputedStyle(bio).lineHeight);
+                const collapsedHeight = lineHeight * collapsedLines;
+
+                toggle.hidden = bio.scrollHeight <= collapsedHeight + 1;
+                bio.style.maxHeight = toggle.hidden
+                    ? 'none'
+                    : `${expanded ? bio.scrollHeight : collapsedHeight}px`;
+            }
+
+            toggle.addEventListener('click', () => {
+                expanded = !expanded;
+                toggle.setAttribute('aria-expanded', String(expanded));
+                toggle.textContent = expanded ? 'See Less' : 'See More';
+                updateBioHeight();
+            });
+
+            window.addEventListener('resize', updateBioHeight);
+            updateBioHeight();
+        }
+
+        // Photo Slideshow Functionality
+        function initSlideshow() {
+            const slides = document.querySelectorAll('.slide');
+            const dots = document.querySelectorAll('.dot');
+            const slideshow = document.getElementById('slideshow');
+            const prevBtn = document.getElementById('prevSlide');
+            const nextBtn = document.getElementById('nextSlide');
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            let currentIndex = 0;
+            let slideInterval;
+            let pointerStart = null;
+
+            function showSlide(index) {
+                if (index < 0) index = slides.length - 1;
+                if (index >= slides.length) index = 0;
+                
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle('active', i === index);
+                });
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                    dot.setAttribute('aria-pressed', String(i === index));
+                });
+                currentIndex = index;
+            }
+
+            function next() {
+                showSlide(currentIndex + 1);
+            }
+
+            function prev() {
+                showSlide(currentIndex - 1);
+            }
+
+            function startTimer() {
+                if (!reducedMotion.matches) {
+                    slideInterval = setInterval(next, 4000);
+                }
+            }
+
+            function resetTimer() {
+                clearInterval(slideInterval);
+                startTimer();
+            }
+
+            nextBtn.addEventListener('click', () => { next(); resetTimer(); });
+            prevBtn.addEventListener('click', () => { prev(); resetTimer(); });
+
+            dots.forEach(dot => {
+                dot.addEventListener('click', (event) => {
+                    const idx = Number.parseInt(event.currentTarget.dataset.index, 10);
+                    showSlide(idx);
+                    resetTimer();
+                });
+            });
+
+            slideshow.addEventListener('pointerdown', (event) => {
+                if ((event.pointerType === 'touch' || event.pointerType === 'pen') &&
+                    !event.target.closest('button')) {
+                    pointerStart = { x: event.clientX, y: event.clientY };
+                }
+            }, { passive: true });
+
+            slideshow.addEventListener('pointerup', (event) => {
+                if (!pointerStart) return;
+
+                const deltaX = event.clientX - pointerStart.x;
+                const deltaY = event.clientY - pointerStart.y;
+                pointerStart = null;
+
+                if (Math.abs(deltaX) > 45 && Math.abs(deltaX) > Math.abs(deltaY) * 1.2) {
+                    deltaX < 0 ? next() : prev();
+                    resetTimer();
+                }
+            }, { passive: true });
+
+            slideshow.addEventListener('pointercancel', () => {
+                pointerStart = null;
+            }, { passive: true });
+
+            startTimer();
+        }
+
+    </script>
+</body>
+</html>
